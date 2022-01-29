@@ -1,8 +1,7 @@
 package ru.myx.ae3impl.vfs;
 
 import java.io.InputStream;
-
-import ru.myx.ae3.Engine;
+import java.nio.charset.StandardCharsets;
 import java.util.function.Function;
 import ru.myx.ae3.binary.Transfer;
 import ru.myx.ae3.binary.TransferBuffer;
@@ -35,6 +34,6 @@ public final class FolderJavaResources implements Function<String, String> {
 			return null;
 		}
 		final TransferBuffer buffer = Transfer.createBuffer(stream);
-		return buffer.toString(Engine.CHARSET_UTF8);
+		return buffer.toString(StandardCharsets.UTF_8);
 	}
 }
